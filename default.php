@@ -1851,7 +1851,7 @@ foreach ( $array as $item) {
 
 							 if ( counter1 > Max1 ) {
 								counter1-- ;
-								document.getElementById("websiteavis1").innerHTML = '&#128113; '+ Math.ceil(counter1) + ' Etudiant(s)'  + "<br/><a class='notification' href='/eleves/default.php?nom_recherche=&recherche_avance=non&annee=TOUS&regexp=&code_groupe_peda=4483&options=tableau+complet&bouton_ok=OK' /> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='badge'> <i class='fa-solid fa-triangle-exclamation' style='display: inline !important;'></i><?php echo $count_prov;?></span>   <span class='tooltiptext3'> &#10060; <spane style='background-color: red ; padding : 3px ; color : white ; border-radius: 3px; '> ETUDIANT(S) STATUS PROV  </spane><br/><br/><hr> " + "<?php echo $prov_message; ?>"  + " <br/>  </span> </a>" ;
+								document.getElementById("websiteavis1").innerHTML = '&#128113; '+ Math.ceil(counter1) + ' Etudiant(s)'  + "<br/><a class='notification' href='/eleves/default.php?nom_recherche=&recherche_avance=non&annee=TOUS&regexp=&code_groupe_peda=4483&options=tableau+complet&bouton_ok=OK' /> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='badge'><?php echo $count_prov;?></span>   <span class='tooltiptext3'> &#10060; <spane style='background-color: red ; padding : 3px ; color : white ; border-radius: 3px; '> ETUDIANT(S) STATUS PROV  </spane><br/><br/><hr> " + "<?php echo $prov_message; ?>"  + " <br/>  </span> </a>" ;
 								 document.getElementById("websiteavis1").classList.add('tooltip3') ;
 							 }
 
