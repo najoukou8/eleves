@@ -67,7 +67,7 @@ $agalan =  $_SERVER['PHP_AUTH_USER'] ;
   <div class="header-right">
 				<div style="float: left ;margin-top:4px ">
                         <input type="checkbox" id="totp" name="totp" <?php  if ($found == 'on' ) { echo "checked"; } ?> />
-                        <label for="totp" title="Durée de 15j -après on redemande un nouveau jeton ">OTP</label>
+                        <label for="totp" title="Durée de 90jours -après on redemande un nouveau jeton ">OTP</label>
                     </div>
 
       <a class="active1" style='color:white' href="/eleves/default.php">&#x1F935; <?php echo " ".$emailConnecte ; ?></a>

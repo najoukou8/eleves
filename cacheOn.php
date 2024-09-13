@@ -15,16 +15,17 @@ $cachePool = new FilesystemAdapter(
  * 15 jours durée de cache , après TOTP obligatoire
  */
 
+$days = 90 ; 
 $agalan = $_GET['key'];
 $sms = $cachePool->getItem($agalan);
 
 if (!$sms->isHit()) {
     $sms->set("on");
-    $sms->expiresAfter(3600*24*15  );
+    $sms->expiresAfter(3600*24*$days  );
     $cachePool->save($sms);
 } else {
     $sms->set("on");
-    $sms->expiresAfter(3600*24*15 );
+    $sms->expiresAfter(3600*24*$days );
     $cachePool->save($sms);
 }
 $content = $sms->get();

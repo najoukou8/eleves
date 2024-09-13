@@ -11,17 +11,17 @@ $cachePool = new FilesystemAdapter(
     $directory = "/var/www/html/giqualite/symfony-cache/"
 );
 
-
+$days = 90 ;
 $agalan = $_GET['key'];
 $sms = $cachePool->getItem($agalan);
 
 if (!$sms->isHit()) {
     $sms->set("off");
-    $sms->expiresAfter(3600*24*15);
+    $sms->expiresAfter(3600*24*$days);
     $cachePool->save($sms);
 } else {
     $sms->set("off");
-    $sms->expiresAfter(3600*24*15);
+    $sms->expiresAfter(3600*24*$days);
     $cachePool->save($sms);
 }
 $content = $sms->get();
