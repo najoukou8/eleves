@@ -1,0 +1,636 @@
+body {  font-family: helvetica , Verdana, helvetica, sans-serif; font-size: 10pt;  margin: 0px ;   }
+th   {  font-family: Vertexio,Verdana, helvetica, sans-serif; font-weight: bold; background-color: #276391; color: #f8b961; font-size: 18px}
+td   {  font-family: helvetica,Verdana, helvetica, sans-serif; font-size: 9pt;}
+
+form   {  font-family: helvetica,Verdana, helvetica, sans-serif; font-size: 10pt}
+select  {  font-family: helvetica,Verdana, helvetica, Helvetica, sans-serif; font-size: 10pt; }
+h1   {  font-family: helvetica,Verdana, helvetica, Helvetica, sans-serif; font-size: 14pt; font-weight: bold}
+h2   {  font-family: helvetica,Verdana, helvetica, Helvetica, sans-serif; font-size: 11pt; }
+
+
+input[type='submit'] {
+
+  background-color:#2b79b5;
+  border-radius:3px;
+  border:1px solid #1d6297;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2b79b5;
+  color:white ;
+  padding-left : 14px ;
+  padding-right : 14px ;
+  font-size: 14px;
+  margin-bottom:5px;
+  cursor:pointer;
+}
+
+.abs:link, .abs:visited {
+  background-color: #b8daff;
+  color: #002752 ;
+  border: 1px solid #2b79b5;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.abs:hover, .abs:active {
+  background-color: #2b79b5;
+  color: white;
+}
+
+.abs1:link, .abs1:visited {
+  background-color: #B4F98D;
+  color: black;
+  border: 1px solid #B4F98D ;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.abs1:hover, .abs2:active {
+  background-color: #84DC52;
+  color: white;
+}
+
+
+.abs2:link, .abs2:visited {
+  background-color: #f5949e;
+  color: black;
+  border: 1px solid red ;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.abs2:hover, .abs2:active {
+  background-color: #c82333;
+  color: white;
+}
+
+table td , table th {
+  padding:4px;
+}
+
+.table1 th {
+  padding:10px;
+  text-transform: uppercase;
+}
+
+.table1 tr:nth-child(odd) td{
+  background-color: #f1f1f1;
+}
+.table1 tr:nth-child(even) td{
+
+}
+
+.table1 {
+  width: 90%;
+}
+
+
+
+.table2 th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.table2 tr:nth-child(odd) td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #f1f1f1;
+  font-size: 11px;
+}
+.table2 tr:nth-child(even) td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 11px;
+}
+
+.table2 {
+
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table th  {
+
+  text-transform: uppercase;
+}
+
+#link-content {
+
+  text-transform: capitalize;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: #eaeaea ;
+  padding: 8px 8px;
+
+}
+
+
+
+.header a {
+  float: left;
+  text-align: center;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+  margin-top:17px;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+.red {
+  text-transform: uppercase;
+  color : #61666d ;
+  padding : 5px ;
+  font-size : 20px ;
+  border-radius:6px;
+  background-color : #f1f1f1 ;
+  font-family: 'Vertexio';
+}
+
+.red2 {
+  text-transform: uppercase;
+  color : #61666d ;
+  padding : 5px ;
+  font-size : 16px ;
+  border-radius:6px;
+  background-color : #f1f1f1 ;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2px;
+  margin-top: -32px;
+}
+
+.box {
+  background-color: #20262e;
+  color: #fff;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 20px;
+  text-align : center ;
+}
+
+@keyframes blink { 50% { border-color:#fff ; }  }
+
+.notification {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification_ {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+}
+
+.notification .badge {
+
+
+  position: absolute;
+  top: -31px;
+  right: 82px;
+  background-color: #dc3545;
+  padding: 2px 7px;
+  border-radius: 50%;
+  color: white;
+
+}
+
+.notification_ .badge_ {
+  position: absolute;
+  top: 4px;
+  right: -60px;
+  background-color: #36be4c;
+  padding: 3px 6px;
+  border-radius: 50%;
+  color: white;
+}
+
+
+.notification .badge2 {
+  position: absolute;
+  top: -29px;
+  right: 75px;
+  background-color: red;
+  padding: 2px 7px;
+  border-radius: 50%;
+  color: white;
+}
+
+.notification .badge3 {
+  position: absolute;
+  top: -29px;
+  right: 75px;
+  background-color: #ff7f00;
+  padding: 2px 5px;
+  border-radius: 50%;
+  color: white;
+}
+
+.notification .badge4 {
+  position: absolute;
+  top: -29px;
+  right: 98px;
+  background-color: #ff7f00;
+  padding: 2px 5px;
+  border-radius: 50%;
+  color: white;
+}
+
+
+.badge , .badge2 , .badge3 , .badge4{
+  font-size : 12px;
+}
+
+#link-content a {
+
+  text-decoration: none;
+}
+
+.bouton_ok , #file {
+  height : 36px;
+  text-transform: uppercase;
+}
+
+.selectStyle {
+  height : 30px ;
+}
+
+@font-face {
+  font-family: 'Vertexio';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Vertexio'), url('https://fonts.cdnfonts.com/s/78809/Soria-Bold.woff') format('woff');
+}
+
+input[type=submit]:hover {
+  background-color: #5499ce;
+}
+
+input[type=text] , .regexp , .selectStyle {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+hr {
+  border-top: 2px solid #2b79b5 ;
+  margin-top : -2px;
+}
+
+.titrePage {
+  font-family: 'Vertexio';
+  color : #ffc107; ;
+  text-decoration: none;
+  margin-top: 0px ; background-color : #2b79b5  ;
+  padding : 8px ;
+  text-transform: uppercase;
+  font-size : 22px;
+  font-weight:bold ;
+}
+
+
+.titrePage2 {
+  font-family: 'Vertexio';
+  color : #ffc107; ;
+  text-decoration: none;
+  margin-top: 0px ; background-color : #2b79b5  ;
+  padding : 12px ;
+  text-transform: uppercase;
+  font-size : 32px;
+  font-weight:bold ;
+}
+
+
+.label-file {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+}
+.label-file:hover {
+  color: #25a5c4;
+}
+
+.imgBorder {
+  border: 3px solid #2b79b5 ;
+  box-shadow: 10px 5px 5px #2b79b5;
+}
+
+.dataTables_info  {
+  text-transform: uppercase;
+  color : white;
+  padding : 5px ;
+  font-size : 14px ;
+  border-radius:4px;
+  background-color : #2273a6;
+  font-family: 'Vertexio';
+  height : 20px ;
+  margin-left: 8px;
+}
+
+section {
+  padding: 60px 0;
+  /* min-height: 100vh;*/
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-area {
+  border-bottom: 1px solid #353C46;
+}
+
+.contact-content p {
+  font-size: 15px;
+  margin: 30px 0 60px;
+  position: relative;
+}
+
+.contact-content p::after {
+  background: #353C46;
+  bottom: -30px;
+  content: '';
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 80%;
+}
+
+.contact-content h6 {
+  color: #8b9199;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contact-content span {
+  color: #353c47;
+  margin: 0 10px;
+}
+
+.contact-social {
+  margin-top: 30px;
+}
+
+.contact-social > ul {
+  display: inline-flex;
+}
+
+.contact-social ul li a {
+  border: 1px solid #8b9199;
+  color: #8b9199;
+  display: inline-block;
+  height: 40px;
+  margin: 0 10px;
+  padding-top: 7px;
+  transition: all 0.4s ease 0s;
+  width: 40px;
+}
+
+.contact-social ul li a:hover {
+  border: 1px solid #FAB702;
+  color: #FAB702;
+}
+
+.contact-content img {
+  max-width: 210px;
+}
+
+
+section, footer {
+  background: #eaeaea;
+  color: #5f636a;
+}
+
+
+footer p {
+  padding: 5px 0;
+  text-align: center;
+
+}
+
+footer img {
+  width: 250px;
+}
+
+footer {
+  padding : 5px;
+  margin-top : -6px ;
+}
+
+
+#tableaucours thead {
+  cursor: pointer;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+
+  visibility: hidden;
+  width: 280px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  opacity: 85%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 50%;
+  font-size: 12px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip2 .tooltiptext2 {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  width: 280px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 34px;
+  left: 50%;
+  font-size: 12px;
+  opacity: 85%;
+}
+
+.tooltip2:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+
+.tooltip3 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip3 .tooltiptext3 {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  width: 200px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 50%;
+  font-size: 12px;
+  opacity: 85%;
+}
+
+.tooltip3:hover .tooltiptext3 {
+  visibility: visible;
+}
+
+.container {
+  margin-top : 2px ;
+  position: relative;
+  background: #d72f2f;
+  color : white ;
+  height: 24px;
+  line-height: 26px;
+  padding: 2px 0;
+
+}
+.marquee {
+  height: 24px;
+  top: 0;
+  width: 100%;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+}
+.marquee div {
+  display: block;
+
+  white-space: nowrap;
+  position: absolute;
+
+  -webkit-animation: marquee 20s linear infinite;
+  -moz-animation: marquee 20s linear infinite;
+  -ms-animation: marquee 20s linear infinite;
+  -o-animation: marquee 20s linear infinite;
+  animation: marquee 20s linear infinite;
+}
+
+@-webkit-keyframes marquee {
+  0% { right: -70%; }
+  100% { right: 100%; }
+}
+@-moz-keyframes marquee {
+  0% { right: -70%; }
+  100% { right: 100%; }
+}
+@-ms-keyframes marquee {
+  0% { right: -70%; }
+  100% { right: 100%; }
+}
+@-o-keyframes marquee {
+  0% { right: -70%; }
+  100% { right: 100%; }
+}
+@keyframes marquee {
+  0% { right: -70%; }
+  100% { right: 100%; }
+}
+
+.msg {
+  font-family: Vertexio;
+  font-size : 18px ;
+  color : #d72f2f ;
+}
+
+
+#userTable_info {
+  margin-top: 10px;
+  color: white;
+}

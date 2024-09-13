@@ -1,0 +1,10 @@
+parameters:
+  db_host     : "localhost"
+  db_name     : "eleves_dbo"
+  db_name2    : "gi_users_preprod"
+  db_name3    : "qualite_gi"
+  db_name4    : "qualite_gi_v3"
+  db_name_ast : "concours_ast_2024bis"
+  db_charset  : "utf8"
+  db_username : "root"
+  db_password : "*Bmanpj1*"

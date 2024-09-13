@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+ini_set('memory_limit', '-1');
+use Bundles\AcmeBundle\Command\CacheClearFmkCommand;
+use Bundles\AppBundle\Command\CacheClearCommand;
+use Bundles\AppBundle\Command\FactureE3Helico;
+use Bundles\AppBundle\Command\GiUsersAuthCommand;
+use Bundles\AppBundle\Command\GroupeTousCommand;
+use Doctrine\ORM\Tools\Console\Command\ClearCache\QueryCommand;
+use Doctrine\ORM\Tools\Console\Command\GenerateEntitiesCommand;
+use Doctrine\ORM\Tools\Console\Command\RunDqlCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Formatter\OutputFormatter;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+
+$application = new Application();
+$application->setName(file_get_contents(__DIR__ . "/../config/banner.txt")."\n");
+
+$formatter = new OutputFormatter();
+$formatter->setStyle('info', new OutputFormatterStyle('green'));
+$output = new ConsoleOutput(OutputInterface::VERBOSITY_NORMAL, null, $formatter);
+
+
+$application->add (  new     CacheClearCommand())      ;
+$application->add (  new     RunDqlCommand())          ;
+$application->add (  new     GenerateEntitiesCommand());
+$application->add (  new     QueryCommand())           ;
+$application->add (  new     CacheClearFmkCommand())   ;
+$application->add (  new     GiUsersAuthCommand())     ;
+$application->add (  new     GroupeTousCommand())      ;
+$application->add (  new     FactureE3Helico()) ;
+
+
+try {
+    $application->run(null,$output);
+} catch (Exception $e) {
+    dump($e);
+}

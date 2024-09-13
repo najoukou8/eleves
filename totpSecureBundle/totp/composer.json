@@ -1,0 +1,18 @@
+{
+    "require": {
+        "robthree/twofactorauth": "^1.8",
+        "symfony/http-foundation": "^5.4",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/config": "^5.4",
+        "twig/twig": "^3.5",
+        "symfony/var-dumper": "^5.4",
+        "phpmailer/phpmailer": "^6.7"
+    },
+	 "autoload": {
+        "psr-4": { 
+			"App\\Services\\": "App/Services",
+			"App\\Security\\": "App/Security" , 
+			"": "src/"
+			}
+    }
+}

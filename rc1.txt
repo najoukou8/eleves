@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------
+        ____  ___   _____ ______   ________    _______    _____________
+       / __ )/   | / ___// ____/  / ____/ /   / ____/ |  / / ____/ ___/
+      / __  / /| | \__ \/ __/    / __/ / /   / __/  | | / / __/  \__ \
+     / /_/ / ___ |___/ / /___   / /___/ /___/ /___  | |/ / /___ ___/ /
+    /_____/_/  |_/____/_____/  /_____/_____/_____/  |___/_____//____/
+
+    Author :  Nadir.Fouka@grenoble-inp.fr
+    GI - 2022-2023
+--------------------------------------------------------------------------
+
+PHP VERSION      : >= 7.2
+APACHE2          : LATEST
+DOCKER CONTAINER : LATEST
+MIGRATION        : LIGHT WITH LEGACY
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+RELEASE RC1 :
+
+- INTEGRATION DU NOUVEAU STYLE CSS , SEMI RESONSIVE
+- INTEGRATION DE DOCTRINE 2 ORM
+- INTEGRATION D UN  NOUVEAU NOYAUX MCV  LIGHT FMK https://packagist.org/packages/nfouka/lightframework POUR STABILISER LE CODE
+  C UN FORK DE SYMFONY CORE
+
+------------------------------------------------------------------------------------------------------------------------
+
+SECURITE  :
+
+- INTEGRATION D UN ORM DOCTRINE II , ( ++ )
+- MODIFICATION DES MCD DES BASES DES DONNEES (+++)
+- MAPPING MCD <-> OBJECT OOP ( + )
+
+
+------------------------------------------------------------------------------------------------------------------------
+CONSOLE DE DEPLOYEMENT
+
+- DEVELOPPEMENT D'UN PHAR COMPRESSER ET CRYPTER ( RSA AES 128 BITS )  POUR LE DEPLOYEMENT SECURISE ( EQUIVELENT ANSIBLE )
+- DEVELOPPEMENT DE LA VERSION BASE ELEVES VU CONSOLE
+        PERMET DE GENERER DES COMMANDE A LA VOLLEE POUR DES BESOIN DU SCOLARITE
+        DONNER LA MAIN A D AUTRES INFORMATICIENS ( NON DEVELOPPEUR ) POUR PRENDRE LA MAIN EN CAS D ABSCENCES IMPREVU DU
+        DEVELOPPEUR GI
+
+
+------------------------------------------------------------------------------------------------------------------------
+ARCHITECTURE SEMBALEMENT A SYMFONY
+
+DOC AND MOP  : https://gitlab.grenoble-inp.fr/gi/be/-/wikis/home
+
+
+@TODO
+
+-PREPARATION DES SCRIPTES DANS BE CONSOLE DE LA BASCULE 06/2023
+-PASSER A 100% OBJECT D ICI SEP 2023
+
+
+SIGNATURE : 530dd10a8a63a2121fa797a84fb9f3a72c01020bd2d7b8b70e3390e47b2cffd7

@@ -1,0 +1,23 @@
+/* style */
+
+    @font-face {
+        font-family: 'Orbitron';
+        font-weight: 400;
+        font-style: normal;
+        src: url("./RobotoCondensed-Regular.ttf") ;
+    }
+	
+body {
+    margin: 0px;
+	padding: 0px;
+	font-family: Orbitron !important ;
+}
+
+form {
+	margin: 40px;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
