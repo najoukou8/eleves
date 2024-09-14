@@ -28,7 +28,7 @@ if ( !isset($_SESSION['doubleAuth'] )   ) {
 
 <style>
 
-.table1 tr:nth-child(3n) {
+.table1 tr:nth-child(3n-1) {
   background-color:#f5f5f5
 }
 
