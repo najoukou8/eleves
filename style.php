@@ -271,9 +271,9 @@ echo "<style type=\"text/css\"> <!--
 .notification .badge2 {
   position: absolute;
   top: -29px;
-  right: 75px;
+  right: -141px;
   background-color: red;
-  padding: 2px 7px;
+  padding: 2px 5px;
   border-radius: 50%;
   color: white;
 }
@@ -718,7 +718,7 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button{
 
 
 h3 {
-	background-color : red ; color : white ; width : 100% ; padding : 5px ; 
+	background-color : #dc3545 ; color : white ; width : 100% ; padding : 5px ; 
 }
 	.header {
 		
