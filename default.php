@@ -34,7 +34,7 @@ if ( !isset($_SESSION['doubleAuth'] )   ) {
 
 #link-content{
 	background-repeat: repeat-x;
-	background-image: url("data:image/svg+xml,%3csvg stroke='rgb(43, 121, 181,0.40)' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='2000' height='350' preserveAspectRatio='none' viewBox='0 0 2000 350'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1032%26quot%3b)' fill='none'%3e%3crect width='2000' height='350' x='0' y='0' fill='rgba(39%2c 135%2c 195%2c 0.2)'%3e%3c/rect%3e%3cpath d='M 0%2c308 C 100%2c264.6 300%2c116.4 500%2c91 C 700%2c65.6 800%2c169.6 1000%2c181 C 1200%2c192.4 1300%2c119.2 1500%2c148 C 1700%2c176.8 1900%2c289.6 2000%2c325L2000 350L0 350z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1032'%3e%3crect width='2000' height='350'  fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	background-image: url("data:image/svg+xml,%3csvg stroke='rgb(43, 121, 181,0.80)' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='2000' height='350' preserveAspectRatio='none' viewBox='0 0 2000 350'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1032%26quot%3b)' fill='none'%3e%3crect width='2000' height='350' x='0' y='0' fill='rgba(39%2c 135%2c 195%2c 0.2)'%3e%3c/rect%3e%3cpath d='M 0%2c308 C 100%2c264.6 300%2c116.4 500%2c91 C 700%2c65.6 800%2c169.6 1000%2c181 C 1200%2c192.4 1300%2c119.2 1500%2c148 C 1700%2c176.8 1900%2c289.6 2000%2c325L2000 350L0 350z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1032'%3e%3crect width='2000' height='350'  fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }	
 
 		
@@ -1925,7 +1925,7 @@ foreach ( $array as $item) {
 			var minVal4 = 0.1;
 			var enAttente = <?php echo json_encode($count5_);?> ;
 			var timer4 = setInterval(function () {
-				document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s)'  ;
+				document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s) en attente(s)'  ;
 				counter4 = counter4 + factor4;
 				var Max4 = 0;
 				Max4 =  <?php echo json_encode( $count4_  );?> ;
@@ -1938,7 +1938,7 @@ foreach ( $array as $item) {
 
 				if ( counter4 > Max4 ) {
 					counter4-- ;
-					document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s)'   + "<br/><a class='notification' href='/eleves/absences/absences_gest.php' />  <span class='badge2' title= '" + enAttente + " Absence(s) En Attente de Validation par DE'> " + enAttente + " </span> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='tooltiptext'> &#10060; ATTENTION <br/><br/><hr> - " +" Absence(s) à valider :  " + enAttente + " <br/>  </span></a>" ;
+					document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s) en attente(s)'   + "<br/><a class='notification' href='/eleves/absences/absences_gest.php' />  <span class='badge2' title= '" + enAttente + " Absence(s) En Attente de Validation par DE'> " + enAttente + " </span> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='tooltiptext'> &#10060; ATTENTION <br/><br/><hr> - " +" Absence(s) à valider :  " + enAttente + " <br/>  </span></a>" ;
                     document.getElementById("websiteavis4").classList.add('tooltip') ;
 
                 }
