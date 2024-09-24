@@ -1,3 +1,6 @@
+<?php 
+session_start() ; 
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html>
@@ -1715,21 +1718,27 @@ $where = $reqsql;
 	
 	
 	
-	session_start() ; 
-	if ($_SERVER['REQUEST_METHOD'] == 'POST' and !empty($_POST['Filter']) ) {
-		$_SESSION['Filter'] = $_POST['limit'] ; 
-	}else{
-		$_SESSION['Filter'] = '2022/04/01' ;
+	//session_start() ; 
+	
+
+	$_SESSION['Filter'] =  ($_SESSION['Filter'] == null ) ?   '2022/04/01' : $_SESSION['Filter']   ; 
+	
+	if( $_POST['Filter'] == 'Filter by last date modification ?' ) {
+		$_SESSION['Filter']  = $_POST['limit'] ; 
 	}
-	$fil =  $_SESSION['Filter'] ; 
+	
+	
+	$fil =  $_SESSION['Filter'] ;  
 	echo "<form method='POST' action=''> <input type='limit'  value='$fil' name='limit' ><input type='submit' name='Filter' value='Filter by last date modification ?' style='background-color:#ff5235'> </form>" ; 	
 	
 	
 	// pour récupérer  les champs de la table_sup
 	$where = $where ." AND  DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d') " ; 
-	$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` ". $where ." order by `".$orderby."` ".$sens );
-	//$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` WHERE DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('2022/04/01', '%Y%m%d')  order by `interculture_date_modif` desc" );
-
+	$req2 = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` ". $where ." order by `".$orderby."` ".$sens );
+	$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` WHERE DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d')  order by `nom` asc " );
+    //$where  = $where . " DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d')" ; 
+	//echo $req2 ; 
+	//$req2 = $req2.$orderby."` ".$sens."`");
 	$reqfiltre= $table." LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup`"; 
 	//echo "SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` ". $where ." order by `".$orderby."` ".$sens ;
 	}
@@ -1971,7 +1980,7 @@ if(in_array($loginConnecte,$login_autorises_suppression) or empty($login_autoris
 
 	   
 echo"</table> ";
-echo "<br><i style='float:left'>Last update 27-03-2024 16h12 by NFO</i><br>";  
+echo "<br><i style='float:left'>Last update 24-09-2024 09h23 by GI-DEV</i><br>";  
   
   }
  if(!$pdo)

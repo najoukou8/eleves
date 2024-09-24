@@ -48,11 +48,11 @@ $directeur_user_liste=array('noelf');
 // pour l'instant $nomail_user_liste peut uniquement changer le champ nomail dans groupe.php
 $nomail_user_liste=array('duronw');
 // pour l'instant $power_user_liste peut faire export totalité permet aussi de voir les infos personneles dans fiche.php
-$power_user_liste=array('reinbolm','dermoucb','duronw','brianto','chretief','dematham','burgaina','thomanng','decomlea','reverdth','davidpie','catussen','dimascom','boissino','cambazah','boujutj','chevriep','jouffral','lemairpi','decomlea');
+$power_user_liste=array('reinbolm','dermoucb','duronw','brianto','bachelej','dematham','burgaina','thomanng','decomlea','reverdth','davidpie','catussen','dimascom','boissino','cambazah','boujutj','chevriep','jouffral','lemairpi','bachelej');
 //ne sert plus
 //$scol_user_complet="ENSGI-WEB\\SCOL";
-$comm_user_liste=array('administrateur','dematham','foukan');
-$scol_user_liste=array('administrateur','jouffral','dehemchn','demichev','malandrs','cataldic','anceychr','lemaireh','jourdann','reinbolm','foukan','phourats','cazeauxj','decomlea');
+$comm_user_liste=array('administrateur','dematham','foukan','bachelej');
+$scol_user_liste=array('administrateur','jouffral','dehemchn','demichev','malandrs','cataldic','anceychr','lemaireh','jourdann','reinbolm','foukan','phourats','cazeauxj','decomlea','bachelej');
 // plus de droits dans groupes.php
 $scol_plus_user_liste=array('administrateur','dehemchn','lemaireh','jouffral','phourats','lemairpi');
 $ri_user_liste=array('administrateur','jouffral','dehemchn','thomanng','cataldic','anceychr','gaujalg','cambazah','patouilm','foukan','phourats');
@@ -68,7 +68,7 @@ $accueil_user_liste=array('ambrosm','administrateur','marzoccj');
 //$re_user_liste=array('re','administrateur','dehemchn','anceychr','mairotc','jouffral','cungv','demichev','malandrs');
 // pour les archives des stages
 $re_user_liste=array('administrateur','jouffral','lemairpi');
-$archive_user_liste=array('dematham','chretief','burgaina','chevriep');//pour voir les groupes archives dans page accueil
+$archive_user_liste=array('dematham','chretief','burgaina','chevriep','administrateur','foukan','bachelej');//pour voir les groupes archives dans page accueil
 // pour usurpation dans bases de test et aussi  renommage en administrateur
 $admin_liste=array('patouilm','foukan','lemairpi');
 

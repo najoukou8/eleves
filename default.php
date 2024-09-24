@@ -310,12 +310,12 @@ if( $_SERVER['SERVER_NAME'] == "localhost" ) {
     $count3=mysql_query("SELECT COUNT(*) AS count3 FROM `cours`",$connexion );
     $count3_ = 0 ;
 
-    $query = "SELECT count(*) as count4 FROM absences LEFT JOIN etudiants ON absences.`code_etud` = etudiants.`Code etu` LEFT JOIN absences_statuts ON absences.`statut_absence` = absences_statuts.`absences_statuts_code` LEFT JOIN etudiants_scol ON absences.`code_etud` = etudiants_scol.`code` where date_debut > '$anneeRefens-08-31' and statut_absence !=2 and statut_absence !=5 and statut_absence !=3 and statut_absence !=6 and statut_absence !=7 and statut_absence !=8 and statut_absence !=9 and statut_absence !=10 and (Nom like '%' or Nom is null ) and (annee like '%' or annee is null ) and (code_etud like '%' or code_etud is null ) and (absences_statuts_texte like '%' or absences_statuts_texte is null ) and (mot_cle like '%' or mot_cle is null )";
+    $query = "SELECT count(*) as count4 FROM absences LEFT JOIN etudiants ON absences.`code_etud` = etudiants.`Code etu` LEFT JOIN absences_statuts ON absences.`statut_absence` = absences_statuts.`absences_statuts_code` LEFT JOIN etudiants_scol ON absences.`code_etud` = etudiants_scol.`code` where date_debut > '$anneeRefens-08-31' and statut_absence !=2 and statut_absence !=5 and statut_absence !=3 and statut_absence !=6 and statut_absence !=7 and statut_absence !=8 and statut_absence !=9 and statut_absence !=10 and  statut_absence !=11 and (Nom like '%' or Nom is null ) and (annee like '%' or annee is null ) and (code_etud like '%' or code_etud is null ) and (absences_statuts_texte like '%' or absences_statuts_texte is null ) and (mot_cle like '%' or mot_cle is null )";
     $count4=mysql_query($query ,$connexion );
     $count4_ = 0 ;
 
     $count5_ = 0 ;
-    $entAttente = "SELECT count(*) as count5 FROM absences LEFT JOIN etudiants ON absences.`code_etud` = etudiants.`Code etu` LEFT JOIN absences_statuts ON absences.`statut_absence` = absences_statuts.`absences_statuts_code` LEFT JOIN etudiants_scol ON absences.`code_etud` = etudiants_scol.`code` where date_debut > '$anneeRefens-08-31' and statut_absence !=2 and statut_absence !=5 and statut_absence !=3 and statut_absence !=6 and statut_absence !=7 and statut_absence !=8 and statut_absence !=9 and statut_absence !=10 and (Nom like '%' or Nom is null ) and (annee like '%' or annee is null ) and (code_etud like '%' or code_etud is null ) and (absences_statuts_texte like '%' or absences_statuts_texte is null ) and (mot_cle like '%' or mot_cle is null ) and ( absences_statuts_texte ='en attente' )  ;";
+    $entAttente = "SELECT count(*) as count5 FROM absences LEFT JOIN etudiants ON absences.`code_etud` = etudiants.`Code etu` LEFT JOIN absences_statuts ON absences.`statut_absence` = absences_statuts.`absences_statuts_code` LEFT JOIN etudiants_scol ON absences.`code_etud` = etudiants_scol.`code` where date_debut > '$anneeRefens-08-31' and statut_absence !=2 and statut_absence !=5 and statut_absence !=3 and statut_absence !=6 and statut_absence !=7 and statut_absence !=8 and statut_absence !=9 and statut_absence !=10 and statut_absence !=11  and (Nom like '%' or Nom is null ) and (annee like '%' or annee is null ) and (code_etud like '%' or code_etud is null ) and (absences_statuts_texte like '%' or absences_statuts_texte is null ) and (mot_cle like '%' or mot_cle is null ) and ( absences_statuts_texte ='en attente' )  ;";
     $count5=mysql_query($entAttente ,$connexion );
 
     $v1=mysql_fetch_array($count1) ;
@@ -2025,7 +2025,8 @@ foreach ( $array as $item) {
                             ]
                         }]
                 };
-				Chart.defaults.global.animation.duration = 0;
+				Chart.defaults.global.animation.duration = 3000;
+				Chart.defaults.global.defaultFontSize = 11 ; 
                 var promisedDeliveryChart = new Chart(document.getElementById('myChart'), {
                     type: 'horizontalBar',
                     data: data,
@@ -2100,6 +2101,7 @@ foreach ( $array as $item) {
 
 
 		
+
 
     </script>
 
