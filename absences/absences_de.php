@@ -297,6 +297,7 @@ echo "		<script src='../js/jsSimpleDatePickrInit.js'></script>";
 echo "		<script src='../js/jsSimpleDatePickr.js'></script>";
 echo "		<script src='../js/verifheure.js'></script>";
 echo "</HEAD><BODY>" ;
+
 // On se connecte à mysql classique ou  PDO
 if($pdo)
 	$connexion =ConnexionPDO ($user_sql, $password, $dsn, $host);
@@ -994,7 +995,10 @@ if($_GET['mod']!=''){
           echo"<input type='hidden' name='".$x."' value=\"".$ci2."\">\n";
 		  }
 	  }
+  
+  
   echo"<center>";
+  echo "<h3 style='margin-top: -20px;background-color:#ca1e1e'>Validation du Directeur d'études  </h3>";
   echo"       <table><tr>  ";
 	 echo "</tr><tr>";
 	 

@@ -58,7 +58,9 @@ exit() ;
 }
 */ 
 
-echo "</HEAD><BODY>" ; ?>
+echo "</HEAD><BODY>" ; 
+echo "<h1>Validation du DE </h1>";
+?>
 
 
     <script>
@@ -111,6 +113,7 @@ if (!isset($_POST['bouton_env'])) $_POST['bouton_env']='';
 //on remet en GET le filtre passé en POST depuis le formaulaire mail
 
 set_time_limit(120);
+
 
     /**
      * stat
