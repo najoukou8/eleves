@@ -1,6 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html>
+<style>
+input[type="submit"]:hover {
+  background-color: #5499ce;
+}
+input[type="submit"] {
+  background-color: #2b79b5;
+  border-radius: 3px;
+  border: 1px solid #1d6297;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2b79b5;
+  color: white;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  margin-left:2px;
+}
+input[type="submit"] {
+  padding: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+  margin-left: 2px;
+  text-transform: uppercase;
+  font-family : helvetica ; 
+}
+input[type="text"], .regexp, .selectStyle {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="text"] {
+  height: 20px;
+  padding: 4px;
+  width : 100% ; 
+}
+
+#absence_log {
+	height : 90px ; 
+	width : 100% ; 
+}
+#commentaire_absence , #commentaire_absence_aj ,#motif {
+	
+	width : 100% ;
+}
+
+
+</style>
 <?
 
 //on filtre tous les arg reçus en get
@@ -685,7 +732,7 @@ if(in_array($loginConnecte,$login_autorises_suppression) or empty($login_autoris
 }
 //--------------------------------- Modif de la fiche
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-elseif($_POST['bouton_mod']!='' or $_POST['bouton_valider_mod'] !='' or $_POST['bouton_valider2_mod'] !='' or $_POST['bouton_nepasvalider_mod'] !='' or $_POST['bouton_info_comp'] !='')
+elseif($_POST['bouton_accepter'] != '' or $_POST['bouton_mod']!='' or $_POST['bouton_valider_mod'] !='' or $_POST['bouton_valider2_mod'] !='' or $_POST['bouton_nepasvalider_mod'] !='' or $_POST['bouton_info_comp'] !='')
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 {
  if(in_array($loginConnecte,$login_autorises_modif)or empty($login_autorises_modif)){
@@ -747,7 +794,38 @@ elseif($_POST['bouton_mod']!='' or $_POST['bouton_valider_mod'] !='' or $_POST['
 			}				
 	  }		  
 	  
+	 
+
+  
+	  /**
+	  NADIR MISE A JOUR 17 09 2024 
+	  */ 
 	  
+	 if( $_POST['bouton_accepter']=='Accepter')
+	  { 
+  
+   
+	   // si on a appuyé sur le bouton nepasvalider on passe statut à 6
+	$_POST['statut_absence']=11; 
+		$_POST['absence_log'].="Etape ".$_POST['statutsauv']  . "-}".$_POST['statut_absence'] ." par  ".$nomloginConnecte ." le ".date("d.m.y")  ." à ".date("H:i:s")  ."\r\n";	
+		// message affiché :
+	$message.="absence passée en statut :  non validée par DE envoi du mail à  informant l'étudiant <br> ";	
+	 // il faudra aussi envoyer un mail
+ $messagem.="Votre absence du ". $_POST['date_debut']." au ".$_POST['date_fin'] ."  a été validée par la Direction des études. \n ".$nomloginConnecte ."  \n";
+
+	 $messagem .= " \nCordialement\n\n";	
+
+				  // On prepare l'email : on initialise les variables
+			$objet = "non validation  de l'absence par le directeur des études ".$nomloginConnecte ;
+					// On envoi l’email à l'etudiant
+					$emailetu =  getInfosLigneTable ('annuaire',$connexion,$_POST['code_etud'],'code-etu')['Mail effectif'];
+			if ($emailetu !=''){			   
+			envoimail($emailetu ,$objet,$messagem);
+			envoimailtest($emailetu ,$objet,$messagem,'',1);
+			//envoimail('nadir.fouka@grenoble-inp.fr' ,$objet,$messagem);
+			}					
+	  }
+	 
   
 	if( $_POST['bouton_nepasvalider_mod']!='')
 	  { 
@@ -1076,11 +1154,11 @@ if($_GET['mod']!=''){
 	$nombreDocs=$preparequerydoc->rowCount();
 	if (!$nombreDocs)
 	{
-		echo "<td><h3>Il n'y a pas de document(s) joint(s)</h3></td>";	
+		echo "<td ><h3>Il n'y a pas de document(s) joint(s)</h3></td>";	
 	}
 	else
 	{
-		echo "<td><h3>Il y a  $nombreDocs document(s) joint(s)</h3></td>";
+		echo "<td><h3 style='background-color:green'>Il y a  $nombreDocs document(s) joint(s)</h3></td>";
 		while (	$u =$preparequerydoc->fetch(PDO::FETCH_OBJ))
 		{
 	echo "<tr><td><a target='_blank' href='".$chemin_absences.$u->doc_lienDoc."'</a>".$u->doc_libelle."</a></td></tr>";
@@ -1098,10 +1176,10 @@ if($_GET['mod']!=''){
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if ($statut_absence == 3 || $statut_absence == 9 || $statut_absence == 5 || $statut_absence == 6 || $statut_absence == 10) {
   echo"<input type='Submit' name='bouton_valider_mod' value='Valider'>";
-    echo"<input type='Submit' name='bouton_valider2_mod' value='Valider sans justificatif'>";
-echo"<input type='Submit' name='bouton_nepasvalider_mod' value='Ne Pas Valider'>";
-echo"<input type='Submit' name='bouton_info_comp' value='Envoyer par mail le commentaire ci dessus'>";
-
+  echo"<input type='Submit' name='bouton_accepter' value='Accepter'>";
+  echo"<input type='Submit' name='bouton_valider2_mod' value='Valider sans justificatif'>";
+  echo"<input type='Submit' name='bouton_nepasvalider_mod' value='Ne Pas Valider'>";
+  echo"<input type='Submit' name='bouton_info_comp' value='Envoyer par mail le commentaire ci dessus'>";
 }
  
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

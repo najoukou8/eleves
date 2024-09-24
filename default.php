@@ -101,7 +101,7 @@ if (!isset($_GET['bouton_annul'])) $_GET['bouton_annul']='';
 if (!isset($_GET['code_groupe'])) $_GET['code_groupe']='';
 if (!isset($_GET['code_groupe_peda'])) $_GET['code_groupe_peda']='';
 if (!isset($_GET['code_etu_recherche'])) $_GET['code_etu_recherche']='' ;
-if (!isset($_GET['forceFormulaireMail'])) $_GET['forceFormulaireMail']='' ;
+if (!isset($_GET['forceFormulaireMail'])) $_GET['forceFormulaireMail']='1' ; // MISE A JOUR NADIR 24 09 2024 
 
 if (!isset($_GET['mon_champ'])) $_GET['mon_champ']='';
 if (!isset($_GET['inverse'])) $_GET['inverse']='';
@@ -125,8 +125,7 @@ set_time_limit(120);
         ->where("cc.codeGroupe = '4483' ")
         //->setParameter('code',  4483 )
         ->groupBy('et.libEtape')
-        //->orderBy('et.libEtape' , 'ASC' )
-		->orderBy('nombre' , 'DESC' )
+        ->orderBy('nombre' , 'desc' )
     ;
 
     $query = $queryBuilder->getQuery();
@@ -1297,8 +1296,8 @@ elseif ($_GET['options']=='liste mail'){
 
 	//echo $reponse[0]."<br>";
 				echo "</tr><tr>";
-	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer' class='bouton_ok'></form>";
-	  echo "<input type='Submit' name='bouton_annul' value='Annuler' class='bouton_ok'>";
+	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer' class='bouton_ok' style='width:200px'></form>";
+	  echo "<input type='Submit' name='bouton_annul' value='Annuler' class='bouton_ok' style='margin-left:2px;background-color:red;border:1px solid red'>";
 	  echo"</th></tr></table> </center>"  ;
 
 
@@ -2038,7 +2037,7 @@ foreach ( $array as $item) {
                         },
                         title: {
                             display: true,
-                            text: 'Répartition de nos '+percent2 + ' étudiant(s) par lib étape'
+                            text: 'Répartition de nos '+percent2 + ' étudiant(s)'
                         },
 						scales: {
 							xAxes: [{

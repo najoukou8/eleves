@@ -1,6 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html>
+<style>
+.table1 tr:nth-child(2n-1) {
+  background-color:#f5f5f5
+}
+.table1 {
+	width : 98% !important ;
+}
+
+
+.abs3:link, .abs3:visited {
+  background-color: #55a8ff;
+  color: black;
+  border: 1px solid #55a8ff;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+input[type="text"]{
+	height : 20px ; 
+	padding : 4px ; 
+}
+
+input[type="submit"]{
+	padding : 4px ; 
+	margin-left : 2px;
+	text-transform: uppercase;
+}
+
+
+</style>
 <?
 
 
@@ -158,7 +190,7 @@ $liste_libelles_tableau=array('mot_cle'=>'mot clé','Prénom 1'=>'Prénom','annee'=
 $liste_libelles_champ=array();
 // taille des champs d'affichage à substituer si commentaire de mysql vides
 //dans l'ordre on regarde  le commentaire mysql puis le tableau $liste_libelles_champ
-$liste_tailles_champ=array('motif'=>80);
+$liste_tailles_champ=array('motif'=>89);
 $liste_place_holder=array('duree'=>"matin, après midi, journée ...");
 //pour les valeurs par defaut en ajout 
 $liste_valeur_defaut=array();
@@ -195,7 +227,7 @@ $login_autorises=array_merge($scol_user_liste,array('lemairpi'));
 //pour pouvoir usurper une identité vide si on ne veut pas de cette fonctionnalité
 //attention danger normalement seulement administrateur
 // incompatible avec $login_autorises vide
-$login_autorises_clone=array('administrateur', 'jouffral');
+$login_autorises_clone=array('administrateur', 'jouffral','foukan');
 // pour pouvoir  ajouter
 $login_autorises_ajout=$scol_user_liste;
 // pour pouvoir  supprimer
@@ -1218,7 +1250,7 @@ if($_GET['mod']!=''){
 		 // en lecture seule
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		if($unchamps=='commentaire_absence'){
-     echo "<td><label for=\"".'commentaire_absence_aj'."\">"."Ajouter un commentaire"."<br></label><textarea  row = \"4\" cols=\"70\" name='commentaire_absence_aj' id='commentaire_absence_aj'></textarea></td>";			
+     echo "<td><label for=\"".'commentaire_absence_aj'."\">"."Ajouter un commentaire"."<br></label><textarea  row = \"10\" cols=\"90\" name='commentaire_absence_aj' id='commentaire_absence_aj'></textarea></td>";			
     echo "</tr><tr>";		
 			 }
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1235,7 +1267,7 @@ if($_GET['mod']!=''){
 				echo affichechamp($commentaire,$unchamps,$$unchamps,$tailleAffichageChamp,'1');	
 		 }
 		else{
-     echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea readonly row = \"4\" cols=\"70\" name=$unchamps id=$unchamps $required>".$$unchamps."</textarea></td>";			
+     echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea readonly row = \"10\" cols=\"90\" name=$unchamps id=$unchamps $required>".$$unchamps."</textarea></td>";			
 		}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			}
@@ -1298,7 +1330,7 @@ if($_GET['mod']!=''){
 			echo affichechamp($commentaire,$unchamps,$$unchamps,$tailleAffichageChamp,'','','','','',$required. ' ' .$placeholder);
 		 }
 		else{
-     echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea  row = \"4\" cols=\"70\" name=$unchamps id=$unchamps $required>".$$unchamps."</textarea></td>";			
+     echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea  row = \"10\" cols=\"90\" name=$unchamps id=$unchamps $required>".$$unchamps."</textarea></td>";			
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 		}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -1518,7 +1550,7 @@ if ($unchamps != $autoincrement and $unchamps != $champ_date_modif and $unchamps
 						  // on n'affiche pas puisqu'il est invisible ou en lecture seule
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 						if($unchamps=='commentaire_absence'){
-					 echo "<td><label for=\"".'commentaire_absence_aj'."\">"."Ajouter un commentaire"."<br></label><textarea  row = \"4\" cols=\"70\" name='commentaire_absence_aj' id='commentaire_absence_aj'></textarea></td>";			
+					 echo "<td><label for=\"".'commentaire_absence_aj'."\">"."Ajouter un commentaire"."<br></label><textarea  row = \"10\" cols=\"90\" name='commentaire_absence_aj' id='commentaire_absence_aj'></textarea></td>";			
 					echo "</tr><tr>";		
 							 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++				 
@@ -1574,7 +1606,7 @@ if ($unchamps != $autoincrement and $unchamps != $champ_date_modif and $unchamps
 						 echo affichechamp($commentaire,$unchamps,$commentValDefaut[$unchamps],$tailleAffichageChamp,'','','','','',$required . ' ' .$placeholder);
 							 }
 							else{
-						 echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea row = \"4\" cols=\"70\" name=$unchamps id=$unchamps $required>".$commentValDefaut[$unchamps]."</textarea></td>";			
+						 echo "<td><label for=\"".$unchamps."\">".$commentaire."<br></label><textarea row = \"10\" cols=\"90\" name=$unchamps id=$unchamps $required>".$commentValDefaut[$unchamps]."</textarea></td>";			
 							}	
 						 }
 }
@@ -1910,7 +1942,7 @@ if((in_array($loginConnecte,$login_autorises_suppression) or empty($login_autori
      echo "sup</A>";
 	 }
 	 if (in_array($loginConnecte,$login_autorises_modif) or empty($login_autorises_modif) ){
-     echo "<A style='width:50px;margin-top:2px' class='abs2' href=". $URL."?mod=".$$cleprimaire."&".$filtrerech." >Mod</A>";
+     echo "<A style='width:50px;margin-top:2px' class='abs3' href=". $URL."?mod=".$$cleprimaire."&".$filtrerech." >Mod</A>";
 	 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	 	 	echo" </td><td>";	  
      echo "<A class='abs' href=documentabsences.php?offre=".$$cleprimaire."&".$filtrerech."from=gest >Docs(".$nombreDocs. ").</A>";	
