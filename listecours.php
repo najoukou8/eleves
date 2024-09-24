@@ -533,11 +533,11 @@ if (!$cmp_cours->isHit())
 {
 
     $cmp_cours->set($cmp);
-	$cmp_cours->expiresAfter(3600*24*15 );
+	$cmp_cours->expiresAfter(3600*24*150 );
     $cachePool->save($cmp_cours);
 }else {
     $cmp_cours->set($cmp);
-	$cmp_cours->expiresAfter(3600*24*15 );
+	$cmp_cours->expiresAfter(3600*24*150 );
     $cachePool->save($cmp_cours);
 }
 

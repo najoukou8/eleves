@@ -125,7 +125,8 @@ set_time_limit(120);
         ->where("cc.codeGroupe = '4483' ")
         //->setParameter('code',  4483 )
         ->groupBy('et.libEtape')
-        ->orderBy('et.libEtape' , 'ASC' )
+        //->orderBy('et.libEtape' , 'ASC' )
+		->orderBy('nombre' , 'DESC' )
     ;
 
     $query = $queryBuilder->getQuery();
@@ -1276,7 +1277,7 @@ elseif ($_GET['options']=='liste mail'){
 	//on met en hidden le mail de l'expediteur
 	 //echo affichechamp('Expéditeur','exp_mail', $email_exp,50,1);
 	 
-	 echo "<td>Expéditeur<br><input type='text' size='50' name='exp_mail' id='exp_mail' value=$emailConnecte></td>" ; 
+	 echo "<td>Expéditeur<br><input type='text' size='60' name='exp_mail' id='exp_mail' value=$emailConnecte></td>" ; 
 	 
 	 
 	 echo "</tr><tr>";
@@ -2037,7 +2038,7 @@ foreach ( $array as $item) {
                         },
                         title: {
                             display: true,
-                            text: 'Répartition de nos '+percent2 + ' étudiant(s)'
+                            text: 'Répartition de nos '+percent2 + ' étudiant(s) par lib étape'
                         },
 						scales: {
 							xAxes: [{

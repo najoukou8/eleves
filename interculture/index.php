@@ -219,8 +219,8 @@ $champ_tri_initial='Nom';
 // sens du tri initial asc ou desc
 $senstriinitial='asc';
 // where initial si pas de filtre initial  : $filtre_initial="where ";
-$filtre_initial="where annee  not like '%(%' and ";
-//$filtre_initial="where ";
+//$filtre_initial="where annee  not like '%(%' and ";
+$filtre_initial="where ";
 // pour ajouter un champ calculé aux requêtes select 
 //$ajout_sql=",year(date_debut) as year ";
 //$ajout_sql=" ,year(interculture_date_debut) as year  ";
@@ -1734,8 +1734,8 @@ $where = $reqsql;
 	
 	// pour récupérer  les champs de la table_sup
 	$where = $where ." AND  DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d') " ; 
-	$req2 = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` ". $where ." order by `".$orderby."` ".$sens );
-	$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` WHERE DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d')  order by `nom` asc " );
+	$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` ". $where ." order by `".$orderby."` ".$sens );
+	//$req = $connexion->query("SELECT $table.*".$sqlChampsTable2.$sqlChampsTable3.$sqlChampsTable_sup.$ajout_sql." FROM $table LEFT JOIN $table2 ON $table.`$cleetrangere2` = $table2.`$indexlien2` LEFT JOIN $table3 ON $table.`$cleetrangere3` = $table3.`$indexlien3` LEFT JOIN $table_sup ON $table.`$cleetrangere_sup` = $table_sup.`$indexlien_sup` WHERE DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d')  order by `nom` asc " );
     //$where  = $where . " DATE_FORMAT(`interculture_date_modif`, '%Y%m%d') >= DATE_FORMAT('$fil', '%Y%m%d')" ; 
 	//echo $req2 ; 
 	//$req2 = $req2.$orderby."` ".$sens."`");
