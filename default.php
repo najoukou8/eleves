@@ -59,7 +59,7 @@ exit() ;
 */ 
 
 echo "</HEAD><BODY>" ; 
-echo "<h1>Validation du DE </h1>";
+
 ?>
 
 
@@ -1131,11 +1131,11 @@ elseif ($_GET['options']=='liste mail'){
 	$listemai3='';
 	$listemail2='';
 	$i=0;
-	echo"<center><table class='table1' style='width:95% '>";
+	echo"<center><table class='table1' style='width:95% ; border : 1px solid black ; padding :8px'>";
 	
 	echo "<thead align='left' style='display: table-header-group'>";
 		echo "<tr>";
-		echo "<th>Mail </th>" ; 
+		echo "<th>Mails des étudiants </th>" ; 
 		echo "</tr>" ; 
 	echo "</thead>" ; 
 	
@@ -1147,7 +1147,7 @@ elseif ($_GET['options']=='liste mail'){
 	$listemail3.=  $e->$mymail_effectif."\n";
 	
 	    echo "<tr>";
-			echo "<td>".$e->$mymail_effectif."</td>" ;
+			echo "<td style='font-family:courier'>$i-".$e->$mymail_effectif."</td>" ;
 		echo "</tr>";
 	
 				  }
@@ -1279,13 +1279,13 @@ elseif ($_GET['options']=='liste mail'){
 	//on met en hidden le mail de l'expediteur
 	 //echo affichechamp('Expéditeur','exp_mail', $email_exp,50,1);
 	 
-	 echo "<td>Expéditeur<br><input type='text' size='60' name='exp_mail' id='exp_mail' value=$emailConnecte></td>" ; 
+	 echo "<td>Expéditeur<br><input type='text' size='100' name='exp_mail' id='exp_mail' value=$emailConnecte></td>" ; 
 	 
 	 
 	 echo "</tr><tr>";
-	echo affichechamp('Objet','objet_mail', '',60,'','','','','','placeholder = \'objet du message\' ');
+	echo affichechamp('Objet','objet_mail', '',100,'','','','','','placeholder = \'objet du message\' ');
 	 echo "</tr><tr>";
-	echo affichechamp('Cc','copie_conforme', '',60,'','','','','', 'placeholder = \'vous pouvez mettre plusieurs adresses en Cc , les séparer par des virgules \' ');
+	echo affichechamp('Cc','copie_conforme', '',100,'','','','','', 'placeholder = \'vous pouvez mettre plusieurs adresses en Cc , les séparer par des virgules \' ');
 	 echo "</tr><tr>";
 		echo "<td colspan=2>Texte du message<br><textarea name='texte' id='textareaId' rows=8 cols=80 placeholder= 'Saisissez votre message en HTML5 ici / copie/colle depuis word'></textarea></td> ";
 
@@ -1299,7 +1299,7 @@ elseif ($_GET['options']=='liste mail'){
 
 	//echo $reponse[0]."<br>";
 				echo "</tr><tr>";
-	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer' class='bouton_ok' style='width:200px'></form>";
+	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer' class='bouton_ok' style='width:350px'></form>";
 	  echo "<input type='Submit' name='bouton_annul' value='Annuler' class='bouton_ok' style='margin-left:2px;background-color:red;border:1px solid red'>";
 	  echo"</th></tr></table> </center>"  ;
 
@@ -2166,16 +2166,6 @@ function getCookie(c_name) {
 }
 
 
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = 'cfecada6c12875f8181288f8365311c621651f7a';
-    window.smartsupp||(function(d) {
-        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-        c.type='text/javascript';c.charset='utf-8';c.async=true;
-        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
-
-
  tinymce.init({
         selector: 'textarea#textareaId',
         height: 300,
@@ -2198,6 +2188,16 @@ function getCookie(c_name) {
         }
     });
 
+
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'cfecada6c12875f8181288f8365311c621651f7a';
+    window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+	
 </script>
 
 
@@ -2210,5 +2210,3 @@ require ("footer.php");
 echo "</body>";
 echo "</html>";
 ?> 
-
-
