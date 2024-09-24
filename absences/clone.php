@@ -280,16 +280,16 @@ if($pdo)
 	$connexion =ConnexionPDO ($user_sql, $password, $dsn, $host);
 else
 $connexion =Connexion ($user_sql, $password, $dsn, $host);
-$loginConnecte = 'malye' ; 
-$login ='malye' ;
-$_SERVER['PHP_AUTH_USER']= 'malye' ;  
+$loginConnecte = 'lemairpi' ; 
+$login ='lemairpi' ;
+$_SERVER['PHP_AUTH_USER']= 'lemairpi' ;  
 require('../header.php');
 // pour le cas
 
-$_SERVER['PHP_AUTH_USER']= 'malye' ; 
+$_SERVER['PHP_AUTH_USER']= 'lemairpi' ; 
 
-$loginConnecte = 'malye' ; 
-$login ='malye' ; 
+$loginConnecte = 'lemairpi' ; 
+$login ='lemairpi' ; 
 
 if($casOn)
 {	
@@ -310,8 +310,8 @@ else
 
 //require('../header.php');
 
-$loginConnecte = 'malye' ; 
-$login ='malye' ; 
+$loginConnecte = 'lemairpi' ; 
+$login ='lemairpi' ; 
 
 if (!isset($_POST['ajout'])) $_POST['ajout']='';
 if (!isset($_GET['del'])) $_GET['del']='';
