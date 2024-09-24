@@ -1002,8 +1002,8 @@ echo"   <tr><td>" ;
 					echo "<i style='color: green' class='fa-regular fa-thumbs-up'></i>
 
 <strong style='text-transform: uppercase;padding:4px;background-color:green ; color: white ; font-weight:normal ; min-width: 290px;display:inline-block'>" .$u->absences_statuts_texte."<strong>" ;
-			}elseif( $u->absences_statuts_texte == 'Accepter par DE' ) {
-							echo "<i style='color: blue' class='fa-regular fa-thumbs-up'></i>&nbsp;<strong style='text-transform: uppercase;padding:4px;background-color:#2863a1 ; color: white ; font-weight:normal; min-width: 290px;display:inline-block'>" .$u->absences_statuts_texte."<strong>" ;
+			}elseif( $u->absences_statuts_texte == 'Acceptée par DE' ) {
+							echo "<i style='color: green' class='fa-regular fa-thumbs-up'></i>&nbsp;<strong style='text-transform: uppercase;padding:4px;background-color:#b3f4a8 ; color: black ; font-weight:normal; min-width: 290px;display:inline-block'>" .$u->absences_statuts_texte."<strong>" ;
 
 			}else{
 				echo "<i style='color: #ea2e43' class='fa-regular fa-thumbs-down'></i>&nbsp;<strong style='text-transform: uppercase;padding:4px;background-color:red ; color: white ; font-weight:normal; min-width: 290px;display:inline-block'>" .$u->absences_statuts_texte."<strong>" ;

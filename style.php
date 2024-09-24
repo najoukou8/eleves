@@ -718,7 +718,7 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button{
 
 
 h3 {
-	background-color : #dc3545 ; color : white ; width : 100% ; padding : 5px ; 
+	background-color : #28a745 ; color : white ; width : 100% ; padding : 5px ; 
 }
 	.header {
 		

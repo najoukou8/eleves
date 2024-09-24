@@ -1128,7 +1128,7 @@ elseif ($_GET['options']=='liste mail'){
 	$listemai3='';
 	$listemail2='';
 	$i=0;
-	echo"<table class='table1'>";
+	echo"<center><table class='table1' style='width:95% '>";
 	
 	echo "<thead align='left' style='display: table-header-group'>";
 		echo "<tr>";
@@ -1296,9 +1296,9 @@ elseif ($_GET['options']=='liste mail'){
 
 	//echo $reponse[0]."<br>";
 				echo "</tr><tr>";
-	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer'></form>";
-	  echo "<input type='Submit' name='bouton_annul' value='Annuler'>";
-	  echo"</th></tr></table> "  ;
+	  echo "</td></tr><tr><th colspan=6><input type='Submit' name='bouton_env' value='envoyer' class='bouton_ok'></form>";
+	  echo "<input type='Submit' name='bouton_annul' value='Annuler' class='bouton_ok'>";
+	  echo"</th></tr></table> </center>"  ;
 
 
 	echo "<br>";
