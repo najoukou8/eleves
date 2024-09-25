@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html>
+
 <?
 
 //on filtre tous les arg reçus en get
@@ -245,6 +246,49 @@ $liste_choix_code_statut_absence=array(0,1,2,3,4,5,6,7);
 require ("../function.php");
 require ("../style.php");
 echo "<head>";
+?>
+<style>
+.table1 tr:nth-child(2n-1) {
+  background-color:#f5f5f5
+}
+.table1 {
+	width : 98% !important ;
+}
+
+
+.abs3:link, .abs3:visited {
+  background-color: #55a8ff;
+  color: black;
+  border: 1px solid #55a8ff;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+input[type="text"]{
+	height : 20px ; 
+	padding : 4px ; 
+}
+
+input[type="submit"]{
+	padding : 4px ; 
+	margin-left : 2px;
+	text-transform: uppercase;
+}
+.table1 th {
+  padding: 10px :important;
+  text-transform: uppercase;
+  background-color: #55a8ff;
+}
+
+table td, table th {
+	font-size : 13px ; 
+	padding: 10px :important;
+}
+
+</style>
+<?php	
 echo "<title>".$texte_table."</title>";
 echo "<meta http-equiv='content-type' content='text/html; charset=iso-8859-1' />";
 // ces 4 fichiers doivent être présent dans le même rep
@@ -662,8 +706,9 @@ $_POST['statut_absence'] = 1;
 		  }
  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++		 
 		
+		
+	
 	 	 
-	 
 	 
 //valeur par defaut et pb des dates mysql
 $err='';
@@ -1689,7 +1734,7 @@ echo"Vous pouvez changer l'ordre de tri initial en cliquant sur les entêtes des 
 if(sizeof($liste_champs_filtre)>0){
 	echo"<br>Vous pouvez filtrer le tableau en sélectionnant une valeur dans le menu filtre </center>";
 	}
-        echo "<BR><table class='table1'>";
+        echo "<BR><table class='table1' style='width:98%'>";
 		
 		echo  "<FORM  action=".$_SERVER['PHP_SELF']." method=GET name='monform'> ";
 

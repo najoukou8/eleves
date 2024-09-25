@@ -462,8 +462,9 @@ e-Stages</a>";
         elseif( in_array ($login ,$de_user_liste )) {
             echo "<a href=absences/absences_de.php>    <i class='fa fa-sliders' aria-hidden='true'></i>
  Gestion des absences -DE-</a>";}
-            echo "<a href=listeabsences.php><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences </a>";
-            //echo "<a href='/eleves/absences/absences_comm.php'><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences commun</a>";
+ 
+            //echo "<a href=listeabsences.php><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences </a>";
+            echo "<a href='/eleves/absences/absences_comm.php'><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences commun</a>";
  
   
 		//if(in_array ($login ,$de_user_liste )){
@@ -487,13 +488,13 @@ echo "<div  id='link-content' style=' ; padding-left : 151px; margin-top:-40px ;
 
 ?>
 
-    <div class="doughnut2" style=" min-width: 400px !important; float: right ; margin-top: 10px">
+    <div class="doughnut2" style="min-width: 500px !important; float: right ; margin-top: 10px">
         <div class="doughnutChartContainer2"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
             <canvas id="myChart2" style="width: 400px; height:  100%;"></canvas>
         </div>
     </div>
 
-    <div class="doughnut" style=" min-width: 450px !important; float: right ; margin-top: 10px">
+    <div class="doughnut" style=" min-width: 500px !important; float: right ; margin-top: 10px">
         <div class="doughnutChartContainer"><iframe class="chartjs-hidden-iframe" style="width: 80%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
             <canvas id="myChart" style="height:  100%;"></canvas>
         </div>
@@ -533,7 +534,7 @@ echo "<br>&#128194; <a href=portedocument/index.php>    Gestion des porte-docume
 
 if( in_array ($login ,$de_user_liste )) {
 echo "<br> 	<i class='fa-solid fa-person-circle-question'></i>   <a href=absences/absences_de.php?tout=1><spane style='border-radius: 30px;font-size:10px;background-color:red;color:white;padding:3px'>Nouveau</spane>Gestion des absences -DE-</a>";}
-echo "<br><i class='fa-solid fa-list'></i> <a href=listeabsences.php>Liste absences</a>";
+echo "<br><i class='fa-solid fa-list'></i> <a href=/eleves/absences/absences_comm.php>Liste absences commun</a>";
 
 
 //    echo "<br><i class='fa-solid fa-list'></i> <a href='/eleves/absences/absences_comm.php'>Liste absences commun</a>";
