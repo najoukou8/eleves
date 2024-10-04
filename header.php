@@ -133,7 +133,7 @@ option {
                                              Swal.fire({
 														icon: "error",
 														title: "T-OTP" ,
-														html: 'La double authentification  est désactivée',
+														html: 'La double authentification  est désactivée pendant 90jours',
 														footer: '<a href="#">GI-DEV</a>'
 													});
                                 }

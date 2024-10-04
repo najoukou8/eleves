@@ -271,11 +271,11 @@ echo "<style type=\"text/css\"> <!--
 .notification .badge2 {
   position: absolute;
   top: -29px;
-  right: -141px;
-  background-color: red;
+  right: 73px;
+  background-color: orange;
   padding: 2px 5px;
   border-radius: 50%;
-  color: white;
+  color: black;
 }
 
 .notification .badge3 {

@@ -81,6 +81,24 @@ if( $giusers->getOtp($_SERVER['PHP_AUTH_USER']) == null && empty($_SESSION['secr
                 if (  $test  ) {
                     
 					$_SESSION['doubleAuth']  = true ; 
+					
+					
+					
+					$days = 90 ; 
+					$agalan = $_SERVER['PHP_AUTH_USER'];
+					$sms = $cachePool->getItem($agalan);
+
+					if (!$sms->isHit()) {
+						$sms->set("on");
+						$sms->expiresAfter(3600*24*$days  );
+						$cachePool->save($sms);
+					} else {
+						$sms->set("on");
+						$sms->expiresAfter(3600*24*$days );
+						$cachePool->save($sms);
+					}
+
+
                 }
                 else {
 					$_SESSION['message'] = null ; 

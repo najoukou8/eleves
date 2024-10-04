@@ -464,7 +464,7 @@ e-Stages</a>";
  Gestion des absences -DE-</a>";}
  
             //echo "<a href=listeabsences.php><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences </a>";
-            echo "<a href='/eleves/absences/absences_comm.php'><i class='fa fa-list-alt' aria-hidden='true'></i>Liste absences commun</a>";
+            echo "<a href='/eleves/absences/absences_comm.php'><i class='fa fa-list-alt' aria-hidden='true'></i> Liste absences commun</a>";
  
   
 		//if(in_array ($login ,$de_user_liste )){
@@ -534,14 +534,14 @@ echo "<br>&#128194; <a href=portedocument/index.php>    Gestion des porte-docume
 
 if( in_array ($login ,$de_user_liste )) {
 echo "<br> 	<i class='fa-solid fa-person-circle-question'></i>   <a href=absences/absences_de.php?tout=1><spane style='border-radius: 30px;font-size:10px;background-color:red;color:white;padding:3px'>Nouveau</spane>Gestion des absences -DE-</a>";}
-echo "<br><i class='fa-solid fa-list'></i> <a href=/eleves/absences/absences_comm.php>Liste absences commun</a>";
+echo "<br><i class='fa-solid fa-list'></i> <a href=/eleves/absences/absences_comm.php> Liste absences commun</a>";
 
 
 //    echo "<br><i class='fa-solid fa-list'></i> <a href='/eleves/absences/absences_comm.php'>Liste absences commun</a>";
 
 // var_dump($de_user_liste) ;
 
-
+echo "<br><a href=listeabsences.php><i class='fa fa-list-alt' aria-hidden='true'></i> Liste absences</a>";
 
  if($login == 'administrateur'){
 //echo "<br><a href=initannu.php> init annuaire</a>";
@@ -1929,7 +1929,7 @@ foreach ( $array as $item) {
 			var minVal4 = 0.1;
 			var enAttente = <?php echo json_encode($count5_);?> ;
 			var timer4 = setInterval(function () {
-				document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s) en attente(s)'  ;
+				document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s)'  ;
 				counter4 = counter4 + factor4;
 				var Max4 = 0;
 				Max4 =  <?php echo json_encode( $count4_  );?> ;
@@ -1942,7 +1942,7 @@ foreach ( $array as $item) {
 
 				if ( counter4 > Max4 ) {
 					counter4-- ;
-					document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s) en attente(s)'   + "<br/><a class='notification' href='/eleves/absences/absences_gest.php' />  <span class='badge2' title= '" + enAttente + " Absence(s) En Attente de Validation par DE'> " + enAttente + " </span> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='tooltiptext'> &#10060; ATTENTION <br/><br/><hr> - " +" Absence(s) à valider :  " + enAttente + " <br/>  </span></a>" ;
+					document.getElementById("websiteavis4").innerHTML = '&#x1F4C8; ' + Math.ceil(counter4) + ' Absent(s)'   + "<br/><a class='notification' href='/eleves/absences/absences_gest.php' />  <span class='badge2' title= '" + enAttente + " Absence(s) En Attente de Validation'> " + enAttente + " </span> <i class='far fa-arrow-alt-circle-right' style='font-size:24px;'></i> <span class='tooltiptext'> &#10060; ATTENTION <br/><br/><hr> - " +" Absence(s) à valider :  " + enAttente + " <br/>  </span></a>" ;
                     document.getElementById("websiteavis4").classList.add('tooltip') ;
 
                 }

@@ -2268,9 +2268,9 @@ try{
 catch (Exception $e){
 die('Erreur : ' . $e->getMessage());
 	}
-//
+//	NADIR 01 10 2024 
 		if ($connexion) {
-			$req = $connexion->query("SELECT  *  FROM people where user_login ='".$login."'");
+			$req = $connexion->query("SELECT  *  FROM people where user_login ='".$login."' LIMIT 1");
 			$nombre=0;
 			while ($u = $req->fetch(PDO::FETCH_OBJ)) {
 
@@ -2316,7 +2316,7 @@ die('Erreur : ' . $e->getMessage());
 				$nombre++;					
 			}
 
-				if ($nombre != 1) {
+				if ($nombre == 0) { // nadir $nombre != 1
 					$message[0]='INEXISTANT DANS ANNUAIRE';			
 			} 
 								
