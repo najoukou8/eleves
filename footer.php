@@ -4,7 +4,7 @@ footer {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #c81d1d;
+   background-color: #000;
    color: white;
    text-align: center;
    text-transform: uppercase;
@@ -28,8 +28,8 @@ $author  =  "nadir.fouka@grenoble-inp.fr" ;
 
 <br><br><br>
 
- <footer style="text-align: center ;background-color:#1e5f80;opacity:0.8">
-        <p style='margin-left: 10px;'> © Grenoble INP - Génie industriel, UGA - <a style='color:white' href='https://gricad-gitlab.univ-grenoble-alpes.fr/foukan/be'>&#169; BE September 2024-2025</a> <?php echo "  ";?> - Service de développement et systèmes d'informations , Last build # <?php echo  $lastCommitHash2 ?> </p>
+ <footer style="text-align: center ;background-color:#000;opacity:0.8">
+        <p style='margin-left: 10px;'> © Grenoble INP - Génie industriel, UGA - <a style='color:white' href='https://gricad-gitlab.univ-grenoble-alpes.fr/foukan/be'>&#169; BE Feb 2025</a> <?php echo "  ";?> - Service de développement et systèmes d'informations , Last build # <?php echo  $lastCommitHash2 ?> </p>
 		
 		<?php
         // echo "<br/><a style='background-color: gray ; color : white ; padding: 3px ; border: 2px ; text-align:center;font-size:9px;text-decoration: none;border-radius: 4px' href=https://gitlab.grenoble-inp.fr/gi/be/-/tree/$lastCommitHash >&nbsp;Last build # $lastCommitHash2($author) hash:$lastCommitHash </a>"  ;

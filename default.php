@@ -3,10 +3,6 @@
 		    session_set_cookie_params(3600 * 24 * 15);
 			session_start();
 	}
-	 // $_SESSION['doubleAuth'] = true ; 
-	 // $_SESSION['doubleAuth'] = null ; 
-
-
 if ( !isset($_SESSION['doubleAuth'] )   ) {
     require('./totpSecureBundle/totp.php') ;
     die() ;
@@ -24,7 +20,7 @@ if ( !isset($_SESSION['doubleAuth'] )   ) {
 <meta name="generator" content="HAPedit 3.1">
 <SCRIPT TYPE="text/javascript" SRC="filterlist.js"></SCRIPT>
 <link href="https://fonts.cdnfonts.com/css/roboto-condensed" rel="stylesheet">
-<script src="https://cdn.tiny.cloud/1/0jfms96dp9ogy09v3b1oqocpr5sduvs7wgnmscghwojaca93/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/yj4w12tapxd0c4d3x21w9iuoi8hqucn2u1o93b5d6x3sqctc/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
 <style>
 
@@ -410,7 +406,7 @@ if( $_SERVER['SERVER_NAME'] == "localhost" ) {
     <div class="container">
         <div class="marquee" style='background-color: #82fa9d !important;color:black'>
             <div>
-                <b style="background-color: GREEN  ; padding: 4px ; opacity: 0.8 ; border-radius: 4px ;"> <span style="color: red ; font-size: 15px;">&#9888; </span> * INFORMATION : </b> 16/07/24 12h32 >  BASCULE BASE ELEVE/SI/ADE/REFENS/TRIODE EST TERMINEE.   
+                <b style="background-color: GREEN  ; padding: 4px ; opacity: 0.8 ; border-radius: 4px ;"> <span style="color: red ; font-size: 15px;">&#9888; </span> * INFORMATION : </b> 08/02/25 23h48 >  MISE A JOUR AUTH-SECURITE -- OK / DEPART,ACCEUIL MISE A JOUR OK --    
             </div>
         </div>
     </div>
@@ -488,13 +484,13 @@ echo "<div  id='link-content' style=' ; padding-left : 151px; margin-top:-40px ;
 
 ?>
 
-    <div class="doughnut2" style="min-width: 500px !important; float: right ; margin-top: 10px">
+    <div class="doughnut2" style="min-width: 450px !important; float: right ; margin-top: 10px">
         <div class="doughnutChartContainer2"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
             <canvas id="myChart2" style="width: 400px; height:  100%;"></canvas>
         </div>
     </div>
 
-    <div class="doughnut" style=" min-width: 500px !important; float: right ; margin-top: 10px">
+    <div class="doughnut" style=" min-width: 450px !important; float: right ; margin-top: 10px">
         <div class="doughnutChartContainer"><iframe class="chartjs-hidden-iframe" style="width: 80%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
             <canvas id="myChart" style="height:  100%;"></canvas>
         </div>
@@ -1392,6 +1388,7 @@ else
 		{echo "<th><a href=".$self."?orderby=".urlencode("cursus_specifique")."&bouton_ok=OK".$filtre.">Cursus spécifique</a></th> ";}
 
 		echo "<th>Adresse mail</th> ";
+		echo "<th>TRIODE</th> ";
 	}
 	// si on a choisi tableau badges il faut mettre d'autres champs ici
 	if ($_GET['options']=='liste badges'){
@@ -1681,6 +1678,8 @@ if ($_GET['options']=='export insc cours'){
 			echo "<td> ".$echanges."</td>";
 			echo "<td> ".$f->cursus_specifique."</td>";
 			echo "<td><a href=mailto:$mail> $mail </a></td>";
+			$checkAnnuaire = checkAnnuaire($code_etu) ; 
+			echo "<td class=$checkAnnuaire > $checkAnnuaire </td>";
 	}
 	if ($_GET['options']=='liste badges'){
 		//echo "<td> ".mysql_datetime($f->date_demande_badge)."</td>";
@@ -2118,21 +2117,20 @@ foreach ( $array as $item) {
 
 $(document).ready(function () {
     $("#delCookie").click(function(){
-        // del_cookie("cookie");   
+        del_cookie("cookie");   
     });
 	
-	var messageDispatcher = "<p style='color:gray ; font-size:13px;text-align: justify;text-justify: inter-word;margin-top:-2px'>Pour renforcer la sécurité de nos applications, l'option de la double authentification 2FA est appliquée, pour la désactiver il suffit de cliquer sur la case à cocher 'OTP' , elle sera renouveler de nouveau tout les 15 jours. <br> Merci de votre compréhension</p>" ; 
+	var messageDispatcher = "<p style='color:gray ; font-size:13px;text-align: justify;text-justify: inter-word;margin-top:-2px'> L'option de la double authentification est désormais configurable, pour la désactiver cliquez sur la case à cocher 'OTP' <input type='checkbox' id='totp' name='totp'>  &#8599; <br>Elle sera renouveler de nouveau toutes les <b>90 jours.</b> <br> Si vous l'aviez déja fait igoner ce message <br><br><b>SERVICE DE DEVELOPPEMENT ET SYSTEMES D'INFORMATION </b></p>" ; 
     
-    console.log(document.cookie);
+    
     var visit = getCookie("cookie");
+	console.log('VISIT COOKIE :'+visit);
 	visit = "NO POPUP" ; 
     if (visit == null) {
 
            Swal.fire({
                     icon: "info",
-                    title: "SERVICE GI-DEV<hr>" ,
                     html: messageDispatcher,
-                    footer: '<a href="#">MESSAGE AUTOMATIQUE</a>'
                 });
 				
         var expire = new Date();
